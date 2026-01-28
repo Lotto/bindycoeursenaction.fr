@@ -77,7 +77,7 @@ Le site sera accessible sur `https://bindycoeursenaction.fr` (après configurati
 
 - **Langue** : Français (contenu et attributs `lang="fr"`)
 - **Design** : Moderne, responsive, dégradés violets (#667eea, #764ba2)
-- **Emoji** : Utiliser 🦋 comme symbole de l'association
+- **Emoji** : Utiliser ❤️ comme symbole de l'association
 - **Accessibilité** : Balises sémantiques HTML5, textes alternatifs
 
 ## Important
