@@ -1,0 +1,273 @@
+---
+layout: default
+---
+
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    line-height: 1.8;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #fff;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  /* Mission Section */
+  .mission {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+
+  .mission h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 30px;
+  }
+
+  .mission p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+  }
+
+  /* Events Section */
+  .events {
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .events h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 50px;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .event-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .event-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .event-card h3 {
+    font-size: 1.8rem;
+    color: #764ba2;
+    margin-bottom: 15px;
+  }
+
+  .event-card p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  /* Supported Organizations */
+  .supported {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+
+  .supported h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 40px;
+  }
+
+  .org-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .org-card h3 {
+    font-size: 1.8rem;
+    color: #764ba2;
+    margin-bottom: 15px;
+  }
+
+  .org-card p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .org-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .org-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer p {
+    margin: 5px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .mission h2,
+    .events h2,
+    .supported h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>🦋 Bindy Coeurs en Action</h1>
+  <p>
+    Association loi 1901 à but non lucratif qui organise des événements solidaires
+    inspirés de Koh-Lanta et Pékin Express pour collecter des fonds et soutenir
+    des associations caritatives qui font la différence.
+  </p>
+  <a href="#mission" class="cta-button">Découvrir notre mission</a>
+</section>
+
+<!-- Mission Section -->
+<section id="mission" class="mission">
+  <h2>Notre Mission</h2>
+  <p>
+    Nous croyons que le divertissement peut être un puissant moteur de changement social.
+    En organisant des événements ludiques et fédérateurs, nous créons des moments de partage
+    tout en collectant des fonds pour des causes qui nous tiennent à cœur.
+  </p>
+  <p>
+    Chaque événement est une opportunité de rassembler des personnes autour de valeurs
+    communes : la solidarité, l'entraide et l'engagement citoyen.
+  </p>
+</section>
+
+<!-- Events Section -->
+<section class="events">
+  <h2>Nos Événements</h2>
+  <div class="events-grid">
+    <div class="event-card">
+      <h3>🏝️ Koh-Lanta Solidaire</h3>
+      <p>
+        Des épreuves d'aventure, de stratégie et de survie pour vivre l'expérience
+        ultime tout en soutenant une noble cause.
+      </p>
+    </div>
+    <div class="event-card">
+      <h3>✈️ Pékin Express Caritatif</h3>
+      <p>
+        Un périple rempli de défis et de découvertes où chaque kilomètre parcouru
+        contribue à faire une différence.
+      </p>
+    </div>
+    <div class="event-card">
+      <h3>🎯 Événements Sur Mesure</h3>
+      <p>
+        Des activités personnalisées adaptées à vos envies, toujours dans un esprit
+        de partage et de générosité.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Supported Organizations -->
+<section class="supported">
+  <h2>Associations Soutenues</h2>
+  <div class="org-card">
+    <h3>Les Papillons</h3>
+    <p>
+      Association dédiée à la protection de l'enfance et à la lutte contre les violences
+      faites aux enfants. Grâce à des boîtes aux lettres installées dans les écoles,
+      Les Papillons libère la parole des enfants et leur offre un espace sécurisé pour s'exprimer.
+    </p>
+    <a href="https://www.associationlespapillons.org/" target="_blank" class="org-link">
+      En savoir plus sur Les Papillons →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Bindy Coeurs en Action - Association loi 1901</p>
+  <p>Ensemble, faisons la différence 💜</p>
+</footer>
