@@ -509,6 +509,62 @@ layout: default
     line-height: 1.6;
   }
 
+  /* WhatsApp Banner */
+  .whatsapp-banner {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  }
+
+  .whatsapp-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .whatsapp-icon {
+    font-size: 3.5rem;
+  }
+
+  .whatsapp-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .whatsapp-text h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .whatsapp-text p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .whatsapp-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: #128c7e;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+
+  .whatsapp-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+
   /* Supported Organizations */
   .supported {
     padding: 100px 20px;
@@ -950,6 +1006,20 @@ layout: default
   </div>
 </section>
 
+<!-- WhatsApp Banner -->
+<section class="whatsapp-banner">
+  <div class="whatsapp-content">
+    <div class="whatsapp-icon">💬</div>
+    <div class="whatsapp-text">
+      <h3>Restez informés !</h3>
+      <p>Rejoignez notre groupe WhatsApp pour ne rien manquer : prochains événements, coulisses, actualités de l'association et bien plus encore.</p>
+    </div>
+    <a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener" class="whatsapp-button">
+      Rejoindre le groupe
+    </a>
+  </div>
+</section>
+
 <!-- Supported Organizations -->
 <section id="supported" class="supported">
   <h2>Associations soutenues</h2>
@@ -977,9 +1047,14 @@ layout: default
     Que vous souhaitiez participer à un événement, devenir bénévole ou
     simplement en savoir plus, nous serions ravis d'échanger avec vous.
   </p>
-  <a href="mailto:contact@bindycoeursenaction.fr" class="cta-button">
-    Nous contacter ❤️
-  </a>
+  <div class="cta-buttons">
+    <a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener" class="cta-button">
+      Rejoindre le WhatsApp
+    </a>
+    <a href="mailto:contact@bindycoeursenaction.fr" class="cta-button secondary">
+      Nous envoyer un email
+    </a>
+  </div>
 </section>
 
 <!-- Footer -->
@@ -1005,6 +1080,7 @@ layout: default
     <div class="footer-section">
       <h4>Contact</h4>
       <ul>
+        <li><a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener">Rejoindre le WhatsApp</a></li>
         <li><a href="mailto:contact@bindycoeursenaction.fr">contact@bindycoeursenaction.fr</a></li>
       </ul>
     </div>
