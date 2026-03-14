@@ -1,0 +1,919 @@
+---
+layout: default
+title: L'aventure solidaire - Rouen 2026
+permalink: /aventure-solidaire-rouen-2026
+---
+
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* Animations */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo .heart {
+    animation: heartbeat 2s infinite;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #7c3aed;
+  }
+
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown > a {
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    min-width: 220px;
+    padding: 10px 0;
+    margin-top: 15px;
+    z-index: 1001;
+  }
+
+  .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu a:hover {
+    background: #f8f5ff;
+    color: #7c3aed;
+  }
+
+  /* Event Hero */
+  .event-hero {
+    background: linear-gradient(135deg, #667eea 0%, #06b6d4 50%, #34d399 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .event-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .event-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .event-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .event-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: -1px;
+  }
+
+  .event-hero .event-tagline {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    font-weight: 300;
+    margin-bottom: 35px;
+  }
+
+  .event-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .event-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .event-meta-item .meta-icon {
+    font-size: 1.3rem;
+  }
+
+  .event-hero .cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: #fff;
+    color: #7c3aed;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .cta-button.secondary:hover {
+    background: white;
+    color: #7c3aed;
+  }
+
+  /* Status banner */
+  .status-banner {
+    background: linear-gradient(135deg, #1e1b4b 0%, #1a1a2e 100%);
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .status-banner p {
+    color: white;
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .status-banner strong {
+    color: #06b6d4;
+  }
+
+  .status-banner a {
+    color: #a78bfa;
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+
+  .status-banner a:hover {
+    color: #c4b5fd;
+  }
+
+  /* Event Details Section */
+  .event-details {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #fff 0%, #f8f9ff 100%);
+  }
+
+  .event-details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .event-description h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 25px;
+    line-height: 1.2;
+  }
+
+  .event-description h2 span {
+    color: #7c3aed;
+  }
+
+  .event-description p {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  /* Info Cards */
+  .event-info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .info-card {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .info-card .info-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .info-card h4 {
+    color: #1a1a2e;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .info-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Programme Section */
+  .programme {
+    padding: 80px 20px;
+    background: #1e1b4b;
+    text-align: center;
+  }
+
+  .programme h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 50px;
+  }
+
+  .programme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .programme-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .programme-card:hover {
+    transform: translateY(-8px);
+    border-color: #06b6d4;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+  }
+
+  .programme-card .prog-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .programme-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .programme-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Press Section */
+  .press-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%);
+  }
+
+  .press-section h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+
+  .press-section .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .press-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    border: 2px solid #f0f0f0;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+
+  .press-card:hover {
+    border-color: #7c3aed;
+    transform: translateY(-5px);
+  }
+
+  .press-source {
+    display: inline-block;
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .press-card h3 {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .press-card p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .press-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .press-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  }
+
+  /* Association Section */
+  .association-section {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+  }
+
+  .association-section h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+
+  .association-section .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .asso-card {
+    background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+  }
+
+  .asso-card:hover {
+    border-color: #7c3aed;
+  }
+
+  .asso-card .asso-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+  }
+
+  .asso-card h3 {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+  }
+
+  .asso-card p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .asso-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .asso-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-section .cta-button {
+    background: white;
+    color: #667eea;
+  }
+
+  /* Footer */
+  footer {
+    background: #0d0d1a;
+    color: white;
+    padding: 60px 20px 30px;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #7c3aed;
+  }
+
+  .footer-section p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-section ul a:hover {
+    color: #7c3aed;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-bottom p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.95rem;
+  }
+
+  .footer-bottom .heart {
+    color: #7c3aed;
+    animation: pulse 2s infinite;
+    display: inline-block;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .event-details-container {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .event-hero h1 {
+      font-size: 2.3rem;
+    }
+
+    .event-hero .event-tagline {
+      font-size: 1.1rem;
+    }
+
+    .event-meta {
+      gap: 15px;
+    }
+
+    .event-meta-item {
+      padding: 10px 18px;
+      font-size: 0.95rem;
+    }
+
+    .event-description h2,
+    .programme h2,
+    .press-section h2,
+    .association-section h2,
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+
+    .event-info-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .press-card {
+      padding: 30px 25px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+      padding: 15px 20px;
+    }
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <a href="{{ site.baseurl }}/" class="nav-logo">
+    <span class="heart">❤️</span> Bindy Coeurs en Action
+  </a>
+  <ul class="nav-links">
+    <li><a href="{{ site.baseurl }}/#mission">Notre mission</a></li>
+    <li class="nav-dropdown">
+      <a href="{{ site.baseurl }}/#events">Événements ▾</a>
+      <div class="dropdown-menu">
+        <a href="{{ site.baseurl }}/#events">Tous les événements</a>
+        <a href="{{ site.baseurl }}/aventure-solidaire-rouen-2026">L'aventure solidaire - Rouen 2026</a>
+      </div>
+    </li>
+    <li><a href="{{ site.baseurl }}/#supported">Associations</a></li>
+    <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Event Hero -->
+<section class="event-hero">
+  <div class="event-hero-content">
+    <div class="event-badge">Premier événement Bindy Coeurs en Action</div>
+    <h1>L'aventure solidaire</h1>
+    <p class="event-tagline">Rouen 2026 - Une course d'orientation façon Pékin Express pour la bonne cause</p>
+
+    <div class="event-meta">
+      <div class="event-meta-item">
+        <span class="meta-icon">📅</span> 25 avril 2026
+      </div>
+      <div class="event-meta-item">
+        <span class="meta-icon">🕙</span> 10h00 - 16h00
+      </div>
+      <div class="event-meta-item">
+        <span class="meta-icon">📍</span> Rouen
+      </div>
+      <div class="event-meta-item">
+        <span class="meta-icon">👫</span> 36€ par binôme
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="https://www.helloasso.com/associations/bindy-coeurs-en-action/evenements/aventure-solidaire-rouen-2026" target="_blank" rel="noopener" class="cta-button">S'inscrire sur HelloAsso</a>
+      <a href="#details" class="cta-button secondary">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<!-- Status Banner -->
+<section class="status-banner">
+  <p>
+    Les inscriptions pour cette session sont <strong>complètes</strong> (20 participants max).
+    Une nouvelle session est déjà prévue ! Suivez-nous sur
+    <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener">Facebook</a>
+    pour être informés de l'ouverture des prochaines inscriptions.
+  </p>
+</section>
+
+<!-- Event Details -->
+<section id="details" class="event-details">
+  <div class="event-details-container">
+    <div class="event-description">
+      <h2>L'aventure <span>solidaire</span> à Rouen</h2>
+      <p>
+        Inspiré de l'émission Pékin Express, le Rouen Express est une course d'orientation
+        en binôme à travers les rues de Rouen. Les participants devront relever des défis,
+        résoudre des énigmes et se repérer dans la ville pour atteindre les différentes
+        étapes du parcours.
+      </p>
+      <p>
+        Plus qu'une simple course, c'est une aventure humaine et solidaire : l'intégralité
+        des bénéfices est reversée à l'association Les Papillons, qui agit pour la protection
+        de l'enfance.
+      </p>
+      <p>
+        Que vous soyez sportifs, stratèges ou simplement curieux, cet événement est
+        accessible à tous et promet une journée riche en émotions et en rencontres.
+      </p>
+    </div>
+
+    <div class="event-info-cards">
+      <div class="info-card">
+        <div class="info-icon">🏁</div>
+        <h4>Course en binôme</h4>
+        <p>Formez votre équipe de 2 et partez à l'aventure dans Rouen</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🧩</div>
+        <h4>Défis & énigmes</h4>
+        <p>Épreuves variées mêlant réflexion, adresse et esprit d'équipe</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🦋</div>
+        <h4>100% solidaire</h4>
+        <p>Tous les bénéfices reversés à l'association Les Papillons</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🎉</div>
+        <h4>Convivialité</h4>
+        <p>Un moment de partage et de bonne humeur garanti</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programme -->
+<section class="programme">
+  <h2>Le programme de la journée</h2>
+  <div class="programme-grid">
+    <div class="programme-card">
+      <div class="prog-icon">☀️</div>
+      <h3>10h00 - Accueil</h3>
+      <p>Accueil des participants, remise des kits de course et briefing sur les règles du jeu.</p>
+    </div>
+    <div class="programme-card">
+      <div class="prog-icon">🏃</div>
+      <h3>10h30 - Départ</h3>
+      <p>C'est parti ! Les binômes s'élancent dans les rues de Rouen pour la première étape.</p>
+    </div>
+    <div class="programme-card">
+      <div class="prog-icon">🧭</div>
+      <h3>10h30 - 15h30</h3>
+      <p>Enchaînement des épreuves, défis et checkpoints à travers la ville.</p>
+    </div>
+    <div class="programme-card">
+      <div class="prog-icon">🏆</div>
+      <h3>16h00 - Remise des prix</h3>
+      <p>Classement final, remise des récompenses et moment convivial pour clôturer la journée.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Press Section -->
+<section class="press-section">
+  <h2>Ils parlent de nous</h2>
+  <p class="subtitle">La presse locale couvre notre premier événement</p>
+  <div class="press-card">
+    <div class="press-source">Rouen Bouge</div>
+    <h3>Une course d'orientation façon Pékin Express pour la bonne cause : rendez-vous le 25 avril à Rouen</h3>
+    <p>
+      Le site Rouen Bouge consacre un article à notre premier événement caritatif.
+      Une belle visibilité pour l'association et pour la cause que nous défendons.
+    </p>
+    <a href="https://rouen-bouge.fr/une-course-dorientation-facon-pekin-express-pour-la-bonne-cause-rendez-vous-le-25-avril-a-rouen" target="_blank" rel="noopener" class="press-link">
+      Lire l'article →
+    </a>
+  </div>
+</section>
+
+<!-- Association Section -->
+<section class="association-section">
+  <h2>L'association soutenue</h2>
+  <p class="subtitle">Les bénéfices de cet événement sont intégralement reversés</p>
+  <div class="asso-card">
+    <div class="asso-icon">🦋</div>
+    <h3>Les Papillons</h3>
+    <p>
+      L'association Les Papillons agit pour la protection de l'enfance en installant
+      des boîtes aux lettres dans les écoles. Ces boîtes permettent aux enfants
+      victimes de violences de s'exprimer en toute confidentialité et d'être
+      accompagnés par des professionnels.
+    </p>
+    <a href="https://www.associationlespapillons.org/" target="_blank" rel="noopener" class="asso-link">
+      Découvrir Les Papillons →
+    </a>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Envie de participer ?</h2>
+  <p>
+    Les inscriptions pour cette session sont complètes, mais une nouvelle session arrive bientôt.
+    Rejoignez notre communauté pour ne rien manquer !
+  </p>
+  <div class="cta-buttons">
+    <a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener" class="cta-button">
+      Rejoindre le WhatsApp
+    </a>
+    <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="cta-button secondary">
+      Suivre sur Facebook
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>❤️ Bindy Coeurs en Action</h4>
+      <p>
+        Association loi 1901 à but non lucratif.
+        Nous organisons des événements solidaires pour
+        soutenir des associations caritatives.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="{{ site.baseurl }}/">Accueil</a></li>
+        <li><a href="{{ site.baseurl }}/#events">Événements</a></li>
+        <li><a href="{{ site.baseurl }}/#supported">Associations soutenues</a></li>
+        <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener">Rejoindre le WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener">Suivez-nous sur Facebook</a></li>
+        <li><a href="mailto:contact@bindycoeursenaction.fr">contact@bindycoeursenaction.fr</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Bindy Coeurs en Action - Fait avec <span class="heart">❤️</span> pour la solidarité</p>
+  </div>
+</footer>
