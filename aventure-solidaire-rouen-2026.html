@@ -38,7 +38,77 @@ permalink: /aventure-solidaire-rouen-2026
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Closed banner */
+  .closed-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .closed-banner p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .closed-banner strong {
+    color: #f59e0b;
+  }
+
+  .closed-banner .fb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1877f2;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .closed-banner .fb-btn:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+  }
+
+  @media (max-width: 600px) {
+    .closed-banner {
+      padding: 10px 15px;
+      gap: 10px;
+    }
+
+    .closed-banner p {
+      font-size: 0.85rem;
+    }
+  }
+
   {% include navbar-styles.html %}
+
+  .navbar {
+    top: 52px;
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      top: 80px;
+    }
+  }
 
   /* Event Hero */
   .event-hero {
@@ -153,35 +223,6 @@ permalink: /aventure-solidaire-rouen-2026
   .cta-button.secondary:hover {
     background: white;
     color: #7c3aed;
-  }
-
-  /* Status banner */
-  .status-banner {
-    background: linear-gradient(135deg, #1e1b4b 0%, #1a1a2e 100%);
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .status-banner p {
-    color: white;
-    font-size: 1.15rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .status-banner strong {
-    color: #06b6d4;
-  }
-
-  .status-banner a {
-    color: #a78bfa;
-    text-decoration: underline;
-    transition: color 0.3s;
-  }
-
-  .status-banner a:hover {
-    color: #c4b5fd;
   }
 
   /* Event Details Section */
@@ -627,6 +668,17 @@ permalink: /aventure-solidaire-rouen-2026
   }
 </style>
 
+<!-- Closed Banner -->
+<div class="closed-banner">
+  <p>
+    <strong>Inscriptions closes !</strong> Les 20 équipes sont au complet.
+    Face à l'engouement, une 2e session est en préparation !
+  </p>
+  <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="fb-btn">
+    Suivre sur Facebook
+  </a>
+</div>
+
 {% include navbar.html %}
 
 <!-- Event Hero -->
@@ -656,16 +708,6 @@ permalink: /aventure-solidaire-rouen-2026
       <a href="#details" class="cta-button secondary">En savoir plus</a>
     </div>
   </div>
-</section>
-
-<!-- Status Banner -->
-<section class="status-banner">
-  <p>
-    Les inscriptions pour cette session sont <strong>complètes</strong> (20 participants max).
-    Une nouvelle session est déjà prévue ! Suivez-nous sur
-    <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener">Facebook</a>
-    pour être informés de l'ouverture des prochaines inscriptions.
-  </p>
 </section>
 
 <!-- Event Details -->
