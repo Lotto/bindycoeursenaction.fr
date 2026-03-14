@@ -41,14 +41,14 @@ permalink: /aventure-solidaire-rouen-2026
   /* Closed banner */
   .closed-banner {
     position: fixed;
-    top: 0;
+    top: 65px;
     left: 0;
     right: 0;
     background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
     color: white;
     text-align: center;
     padding: 12px 20px;
-    z-index: 1100;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,6 +87,12 @@ permalink: /aventure-solidaire-rouen-2026
     box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
   }
 
+  @media (max-width: 968px) {
+    .closed-banner {
+      top: 55px;
+    }
+  }
+
   @media (max-width: 600px) {
     .closed-banner {
       padding: 10px 15px;
@@ -99,16 +105,6 @@ permalink: /aventure-solidaire-rouen-2026
   }
 
   {% include navbar-styles.html %}
-
-  .navbar {
-    top: 52px;
-  }
-
-  @media (max-width: 600px) {
-    .navbar {
-      top: 80px;
-    }
-  }
 
   /* Event Hero */
   .event-hero {
@@ -668,6 +664,8 @@ permalink: /aventure-solidaire-rouen-2026
   }
 </style>
 
+{% include navbar.html %}
+
 <!-- Closed Banner -->
 <div class="closed-banner">
   <p>
@@ -678,8 +676,6 @@ permalink: /aventure-solidaire-rouen-2026
     Suivre sur Facebook
   </a>
 </div>
-
-{% include navbar.html %}
 
 <!-- Event Hero -->
 <section class="event-hero">

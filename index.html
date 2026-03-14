@@ -61,14 +61,14 @@ layout: default
   /* Announcement banner */
   .announcement-banner {
     position: fixed;
-    top: 0;
+    top: 65px;
     left: 0;
     right: 0;
     background: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
     color: white;
     text-align: center;
     padding: 10px 20px;
-    z-index: 1100;
+    z-index: 999;
     font-size: 0.95rem;
     font-weight: 500;
   }
@@ -95,6 +95,12 @@ layout: default
     white-space: nowrap;
   }
 
+  @media (max-width: 968px) {
+    .announcement-banner {
+      top: 55px;
+    }
+  }
+
   @media (max-width: 600px) {
     .announcement-banner {
       font-size: 0.85rem;
@@ -118,10 +124,6 @@ layout: default
 
   /* Navigation */
   {% include navbar-styles.html %}
-
-  .navbar {
-    top: 40px;
-  }
 
   /* Hero Section */
   .hero {
@@ -780,6 +782,8 @@ layout: default
   }
 </style>
 
+{% include navbar.html %}
+
 <!-- Announcement Banner -->
 <div class="announcement-banner">
   <a href="{{ site.baseurl }}/aventure-solidaire-rouen-2026">
@@ -788,8 +792,6 @@ layout: default
     <span class="banner-cta">En savoir plus →</span>
   </a>
 </div>
-
-{% include navbar.html %}
 
 <!-- Hero Section -->
 <section class="hero">
