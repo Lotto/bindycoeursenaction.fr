@@ -403,6 +403,47 @@ layout: default
     font-size: 0.9rem;
   }
 
+  .event-card.featured {
+    border: 2px solid #7c3aed;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .event-card.featured .event-card-header {
+    background: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
+  }
+
+  .event-badge-next {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .event-card .event-cta {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .event-card .event-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  }
+
   /* How it works */
   .how-it-works {
     padding: 100px 20px;
@@ -786,6 +827,26 @@ layout: default
   <h2>Nos événements</h2>
   <p class="subtitle">Des aventures uniques pour des causes qui comptent</p>
   <div class="events-grid">
+    <div class="event-card featured">
+      <div class="event-card-header">
+        <div class="event-badge-next">Prochain événement</div>
+        <div class="icon">✈️</div>
+        <h3>L'aventure solidaire - Rouen 2026</h3>
+      </div>
+      <div class="event-card-body">
+        <p>
+          Une course d'orientation façon Pékin Express en binôme à travers
+          les rues de Rouen. Défis, énigmes et bonne humeur au programme !
+        </p>
+        <ul class="event-features">
+          <li>25 avril 2026 - Rouen</li>
+          <li>Course en binôme (36€/binôme)</li>
+          <li>100% des bénéfices pour Les Papillons</li>
+          <li>Session complète - prochaine bientôt !</li>
+        </ul>
+        <a href="{{ site.baseurl }}/aventure-solidaire-rouen-2026" class="event-cta">Découvrir l'événement →</a>
+      </div>
+    </div>
     <div class="event-card">
       <div class="event-card-header">
         <div class="icon">🏝️</div>
@@ -801,24 +862,6 @@ layout: default
           <li>Conseils et éliminations</li>
           <li>Ambiance conviviale garantie</li>
           <li>Accessible à tous les niveaux</li>
-        </ul>
-      </div>
-    </div>
-    <div class="event-card">
-      <div class="event-card-header">
-        <div class="icon">✈️</div>
-        <h3>Pékin Express Caritatif</h3>
-      </div>
-      <div class="event-card-body">
-        <p>
-          Partez à l'aventure ! Un périple rempli de défis, de rencontres
-          et de découvertes où chaque étape compte.
-        </p>
-        <ul class="event-features">
-          <li>Course en binôme</li>
-          <li>Défis et missions surprise</li>
-          <li>Découverte de nouveaux horizons</li>
-          <li>Esprit d'équipe et entraide</li>
         </ul>
       </div>
     </div>
