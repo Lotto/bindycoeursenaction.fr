@@ -1,0 +1,22 @@
+<script>
+  function toggleMenu() {
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+    document.querySelector('.mobile-overlay').classList.toggle('active');
+    document.body.style.overflow = document.querySelector('.nav-links').classList.contains('active') ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    document.querySelector('.hamburger').classList.remove('active');
+    document.querySelector('.nav-links').classList.remove('active');
+    document.querySelector('.mobile-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function toggleDropdownMobile(e, el) {
+    if (window.innerWidth <= 968) {
+      e.preventDefault();
+      el.closest('.nav-dropdown').classList.toggle('open');
+    }
+  }
+</script>

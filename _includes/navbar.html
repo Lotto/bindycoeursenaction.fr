@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <a href="{{ site.baseurl }}/" class="nav-logo">
+    <span class="heart">❤️</span> Bindy Coeurs en Action
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="{{ site.baseurl }}/#mission" onclick="closeMenu()">Notre mission</a></li>
+    <li class="nav-dropdown">
+      <a href="{{ site.baseurl }}/#events" onclick="toggleDropdownMobile(event, this)">Événements ▾</a>
+      <div class="dropdown-menu">
+        <a href="{{ site.baseurl }}/#events" onclick="closeMenu()">Tous les événements</a>
+        <a href="{{ site.baseurl }}/aventure-solidaire-rouen-2026">L'aventure solidaire - Rouen 2026</a>
+      </div>
+    </li>
+    <li><a href="{{ site.baseurl }}/#supported" onclick="closeMenu()">Associations</a></li>
+    <li><a href="{{ site.baseurl }}/#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+<div class="mobile-overlay" onclick="closeMenu()"></div>
