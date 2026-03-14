@@ -58,8 +58,70 @@ layout: default
     transform: translateY(0);
   }
 
+  /* Announcement banner */
+  .announcement-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    z-index: 1100;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .announcement-banner a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .announcement-banner a:hover {
+    opacity: 0.9;
+  }
+
+  .announcement-banner .banner-cta {
+    background: rgba(255,255,255,0.25);
+    padding: 3px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .announcement-banner {
+      font-size: 0.85rem;
+      padding: 8px 15px;
+    }
+
+    .announcement-banner .banner-text {
+      display: none;
+    }
+
+    .announcement-banner .banner-text-mobile {
+      display: inline;
+    }
+  }
+
+  @media (min-width: 601px) {
+    .announcement-banner .banner-text-mobile {
+      display: none;
+    }
+  }
+
   /* Navigation */
   {% include navbar-styles.html %}
+
+  .navbar {
+    top: 40px;
+  }
 
   /* Hero Section */
   .hero {
@@ -717,6 +779,15 @@ layout: default
     }
   }
 </style>
+
+<!-- Announcement Banner -->
+<div class="announcement-banner">
+  <a href="{{ site.baseurl }}/aventure-solidaire-rouen-2026">
+    <span class="banner-text">🎉 Prochain événement : L'aventure solidaire - Rouen, 25 avril 2026</span>
+    <span class="banner-text-mobile">🎉 25 avril 2026 - Rouen</span>
+    <span class="banner-cta">En savoir plus →</span>
+  </a>
+</div>
 
 {% include navbar.html %}
 
