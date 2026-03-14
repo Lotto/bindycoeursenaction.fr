@@ -305,6 +305,101 @@ permalink: /aventure-solidaire-rouen-2026
     line-height: 1.7;
   }
 
+  /* Transparency Section */
+  .transparency {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%);
+    text-align: center;
+  }
+
+  .transparency h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+
+  .transparency .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .price-breakdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+
+  .price-card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+  }
+
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .price-card.highlight {
+    border: 2px solid #7c3aed;
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+  }
+
+  .price-card .price-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .price-card h3 {
+    font-size: 1.8rem;
+    color: #7c3aed;
+    margin-bottom: 8px;
+    font-weight: 800;
+  }
+
+  .price-card h4 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+  }
+
+  .price-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .transparency-note {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    background: white;
+    padding: 25px 35px;
+    border-radius: 15px;
+    border-left: 4px solid #7c3aed;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  }
+
+  @media (max-width: 768px) {
+    .transparency h2 {
+      font-size: 2rem;
+    }
+  }
+
   /* Press Section */
   .press-section {
     padding: 80px 20px;
@@ -585,9 +680,9 @@ permalink: /aventure-solidaire-rouen-2026
         étapes du parcours.
       </p>
       <p>
-        Plus qu'une simple course, c'est une aventure humaine et solidaire : l'intégralité
-        des bénéfices est reversée à l'association Les Papillons, qui agit pour la protection
-        de l'enfance.
+        Plus qu'une simple course, c'est une aventure humaine et solidaire : 10€ par participant
+        (20€ par binôme) sont directement reversés à l'association Les Papillons, qui agit
+        pour la protection de l'enfance.
       </p>
       <p>
         Que vous soyez sportifs, stratèges ou simplement curieux, cet événement est
@@ -644,6 +739,29 @@ permalink: /aventure-solidaire-rouen-2026
       <h3>16h00 - Remise des prix</h3>
       <p>Classement final, remise des récompenses et moment convivial pour clôturer la journée.</p>
     </div>
+  </div>
+</section>
+
+<!-- Transparency Section -->
+<section class="transparency">
+  <h2>Où va votre inscription ?</h2>
+  <p class="subtitle">Nous croyons en la transparence totale envers nos participants</p>
+  <div class="price-breakdown">
+    <div class="price-card highlight">
+      <div class="price-icon">🦋</div>
+      <h3>20€</h3>
+      <h4>Reversés à l'association</h4>
+      <p>10€ par participant sont directement reversés à l'association Les Papillons, soit 20€ par binôme.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-icon">⚙️</div>
+      <h3>16€</h3>
+      <h4>Organisation & frais</h4>
+      <p>Le reste couvre l'organisation de l'événement, l'assurance, les frais bancaires et le fonctionnement de l'association.</p>
+    </div>
+  </div>
+  <div class="transparency-note">
+    Bindy Coeurs en Action est une association loi 1901 à but non lucratif. Notre objectif est de reverser un maximum à nos associations partenaires, tout en assurant des événements de qualité et en toute sécurité pour nos participants.
   </div>
 </section>
 
