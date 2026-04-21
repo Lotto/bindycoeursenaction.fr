@@ -140,11 +140,12 @@ layout: default
     max-width: 900px;
   }
 
-  .hero-heart {
-    font-size: 5rem;
+  .hero-logo {
+    height: 120px;
+    width: auto;
     margin-bottom: 20px;
-    display: inline-block;
     animation: heartbeat 2s infinite;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
   }
 
   .hero h1 {
@@ -739,8 +740,8 @@ layout: default
       font-size: 1.2rem;
     }
 
-    .hero-heart {
-      font-size: 3.5rem;
+    .hero-logo {
+      height: 90px;
     }
 
     .stats {
@@ -790,7 +791,7 @@ layout: default
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-heart">❤️</div>
+    <img src="{{ site.baseurl }}/assets/images/Logo_Coeur_en_Action_CMJN.svg" alt="Bindy Coeurs en Action" class="hero-logo">
     <h1>Bindy Coeurs en Action</h1>
     <p class="tagline">L'aventure au service de la solidarité</p>
     <p>
