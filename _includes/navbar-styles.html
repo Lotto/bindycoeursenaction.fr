@@ -57,6 +57,18 @@
   cursor: pointer;
 }
 
+/* Pont invisible sous l'onglet : couvre l'espace de 15px qui separe
+   l'onglet du menu, pour ne pas perdre le survol en descendant la souris */
+.nav-dropdown:hover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 15px;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -196,6 +208,10 @@
   }
 
   .nav-dropdown .dropdown-menu::before {
+    display: none;
+  }
+
+  .nav-dropdown:hover::after {
     display: none;
   }
 
