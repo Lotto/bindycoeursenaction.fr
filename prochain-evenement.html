@@ -1,0 +1,370 @@
+---
+layout: default
+title: Prochain événement
+permalink: /prochain-evenement
+description: Une nouvelle aventure solidaire Bindy Coeurs en Action est en préparation pour avant la fin 2026. Suivez-nous sur Facebook pour être les premiers informés.
+---
+
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* Animations */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  {% include navbar-styles.html %}
+
+  /* Hero */
+  .soon-hero {
+    background: linear-gradient(135deg, #203059 0%, #3a4b7a 50%, #ee7518 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .soon-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .soon-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .soon-hero-logo {
+    height: 260px;
+    width: auto;
+    display: block;
+    margin: 0 auto 25px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+  }
+
+  .soon-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .soon-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .soon-hero .soon-tagline {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    font-weight: 300;
+    margin-bottom: 35px;
+  }
+
+  /* Boutons */
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 45px;
+    background-color: #fff;
+    color: #ee7518;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    box-shadow: none;
+  }
+
+  .cta-button.secondary:hover {
+    background: white;
+    color: #ee7518;
+  }
+
+  .cta-button .fb-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* Section "ce qui se prepare" */
+  .soon-details {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #fff 0%, #fff8f0 100%);
+    text-align: center;
+  }
+
+  .soon-details h2 {
+    font-size: 2.5rem;
+    color: #203059;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .soon-details h2 span {
+    color: #ee7518;
+  }
+
+  .soon-details .intro {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+
+  .soon-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .soon-card {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .soon-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .soon-card .card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .soon-card h3 {
+    color: #203059;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .soon-card p {
+    color: #666;
+    font-size: 0.98rem;
+  }
+
+  .soon-card.highlight {
+    border: 2px solid #ee7518;
+  }
+
+  .soon-card.highlight p {
+    color: #ee7518;
+    font-weight: 700;
+  }
+
+  /* CTA final */
+  .cta-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 auto 35px;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .cta-section .cta-button {
+    background: white;
+    color: #203059;
+  }
+
+  .cta-section .cta-button.secondary {
+    background: transparent;
+    color: white;
+  }
+
+  .cta-section .cta-button.secondary:hover {
+    background: white;
+    color: #203059;
+  }
+
+  {% include footer-styles.html %}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .soon-hero h1 {
+      font-size: 2.3rem;
+    }
+
+    .soon-hero-logo {
+      height: 200px;
+    }
+
+    .soon-hero .soon-tagline {
+      font-size: 1.1rem;
+    }
+
+    .soon-details h2,
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-button {
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
+
+{% include navbar.html %}
+
+<!-- Hero -->
+<section class="soon-hero">
+  <div class="soon-hero-content">
+    <img src="{{ site.baseurl }}/assets/images/Logo_Coeur_en_Action_BLANC.svg" alt="Bindy Coeurs en Action" class="soon-hero-logo">
+    <div class="soon-badge">🚧 En cours de préparation</div>
+    <h1>Notre prochain événement se prépare</h1>
+    <p class="soon-tagline">
+      Une nouvelle aventure solidaire arrive avant la fin 2026.
+      Suivez-nous sur Facebook pour être les premiers informés !
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="cta-button">
+        <svg class="fb-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
+        </svg>
+        Suivre sur Facebook
+      </a>
+      <a href="#preparation" class="cta-button secondary">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<!-- Ce qui se prepare -->
+<section id="preparation" class="soon-details">
+  <h2>Une nouvelle <span>aventure</span> en préparation</h2>
+  <p class="intro">
+    Après le succès de notre première aventure solidaire, l'équipe prépare
+    déjà la suite. Le prochain événement se tiendra avant la fin de l'année
+    2026 : les détails se précisent et seront annoncés prochainement.
+  </p>
+  <div class="soon-cards">
+    <div class="soon-card highlight">
+      <div class="card-icon">📅</div>
+      <h3>Date</h3>
+      <p>Avant la fin 2026</p>
+    </div>
+    <div class="soon-card">
+      <div class="card-icon">📍</div>
+      <h3>Lieu</h3>
+      <p>À annoncer</p>
+    </div>
+    <div class="soon-card">
+      <div class="card-icon">🎯</div>
+      <h3>Format</h3>
+      <p>À annoncer</p>
+    </div>
+    <div class="soon-card">
+      <div class="card-icon">🤝</div>
+      <h3>Association soutenue</h3>
+      <p>À annoncer</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-section">
+  <h2>Ne manquez pas l'annonce</h2>
+  <p>
+    Toutes les nouveautés sont publiées en avant-première sur notre page
+    Facebook : date, lieu, ouverture des inscriptions et coulisses de la
+    préparation.
+  </p>
+  <div class="cta-buttons">
+    <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="cta-button">
+      <svg class="fb-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
+      </svg>
+      Suivre sur Facebook
+    </a>
+    <a href="https://chat.whatsapp.com/EJTSJCvPwgBC4tgHwqztgK" target="_blank" rel="noopener" class="cta-button secondary">
+      Rejoindre le WhatsApp
+    </a>
+  </div>
+</section>
+
+{% include footer.html %}
+
+{% include navbar-script.html %}
