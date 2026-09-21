@@ -97,12 +97,17 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 ## Conventions
 
 - **Langue** : Français (contenu et attributs `lang="fr"`)
-- **Design** : Moderne, responsive, dégradés violets/turquoise (#667eea, #7c3aed, #06b6d4)
+- **Design** : Moderne, responsive, dégradés bleu marine / orange
+  - `#203059` bleu marine (titres, footer, début des dégradés)
+  - `#ee7518` orange (accents, boutons, liens survolés) et `#c95d10` pour son dégradé
+  - `#3a4b7a` bleu intermédiaire, `#fff8f0` fond crème des sections claires
 - **Emoji** : Utiliser ❤️ comme symbole de l'association
 - **Accessibilité** : Balises sémantiques HTML5, textes alternatifs
 - **Liens internes** : Toujours utiliser `{{ site.baseurl }}/` pour les liens entre pages
 - **Menu mobile** : Hamburger menu avec panneau latéral droit, géré par JS dans navbar-script.html
-- **Bandeaux d'annonce** : Positionnés sous la navbar (top: 65px), z-index: 999
+- **Bandeaux d'annonce** : plus aucun bandeau fixe sur le site. Si l'on en
+  réintroduit un, le positionner sous la navbar (`top: 70px`, hauteur de la
+  navbar), `z-index: 999`, et compenser dans le `padding-top` du hero
 
 ## Pages existantes
 
@@ -110,6 +115,7 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 |------|---------|-----|
 | Accueil | `index.html` | `/` |
 | Événement Rouen 2026 | `aventure-solidaire-rouen-2026.html` | `/aventure-solidaire-rouen-2026` |
+| Prochain événement | `prochain-evenement.html` | `/prochain-evenement` |
 
 ## Important
 
