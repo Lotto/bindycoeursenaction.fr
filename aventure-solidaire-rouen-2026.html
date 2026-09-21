@@ -38,66 +38,6 @@ permalink: /aventure-solidaire-rouen-2026
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Closed banner */
-  .closed-banner {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #141b38 0%, #203059 100%);
-    color: white;
-    text-align: center;
-    padding: 12px 20px;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  .closed-banner p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .closed-banner strong {
-    color: #ee7518;
-  }
-
-  .closed-banner .fb-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #1877f2;
-    color: white;
-    text-decoration: none;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
-
-  .closed-banner .fb-btn:hover {
-    background: #166fe5;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
-  }
-
-  @media (max-width: 600px) {
-    .closed-banner {
-      padding: 10px 15px;
-      gap: 10px;
-    }
-
-    .closed-banner p {
-      font-size: 0.85rem;
-    }
-  }
-
   {% include navbar-styles.html %}
 
   /* Event Hero */
@@ -679,17 +619,6 @@ permalink: /aventure-solidaire-rouen-2026
 
 {% include navbar.html %}
 
-<!-- Closed Banner -->
-<div class="closed-banner">
-  <p>
-    <strong>Inscriptions closes !</strong> Les 20 équipes sont au complet.
-    Face à l'engouement, une 2e session est en préparation !
-  </p>
-  <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="fb-btn">
-    Suivre sur Facebook
-  </a>
-</div>
-
 <!-- Event Hero -->
 <section class="event-hero">
   <div class="event-hero-content">
@@ -714,8 +643,7 @@ permalink: /aventure-solidaire-rouen-2026
     </div>
 
     <div class="cta-buttons">
-      <a href="https://www.helloasso.com/associations/bindy-coeurs-en-action/evenements/aventure-solidaire-rouen-2026" target="_blank" rel="noopener" class="cta-button">S'inscrire sur HelloAsso</a>
-      <a href="#details" class="cta-button secondary">En savoir plus</a>
+      <a href="#details" class="cta-button">En savoir plus</a>
     </div>
   </div>
 </section>
