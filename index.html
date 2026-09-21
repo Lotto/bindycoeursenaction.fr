@@ -359,19 +359,20 @@ layout: default
     position: relative;
   }
 
-  .event-card:nth-child(1) .event-card-header {
+  /* Cycle de 4 couleurs : couvre un nombre quelconque de cartes */
+  .event-card:nth-child(4n+1) .event-card-header {
     background: linear-gradient(135deg, #ee7518 0%, #f59e42 100%);
   }
 
-  .event-card:nth-child(2) .event-card-header {
+  .event-card:nth-child(4n+2) .event-card-header {
     background: linear-gradient(135deg, #203059 0%, #3a4b7a 100%);
   }
 
-  .event-card:nth-child(3) .event-card-header {
+  .event-card:nth-child(4n+3) .event-card-header {
     background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
   }
 
-  .event-card:nth-child(4) .event-card-header {
+  .event-card:nth-child(4n+4) .event-card-header {
     background: linear-gradient(135deg, #3a4b7a 0%, #141b38 100%);
   }
 
@@ -825,6 +826,24 @@ layout: default
   <p class="subtitle">Des aventures uniques pour des causes qui comptent</p>
   <div class="events-grid">
     <div class="event-card featured">
+      <div class="event-card-header">
+        <div class="icon">🚧</div>
+        <h3>Prochain événement</h3>
+      </div>
+      <div class="event-card-body">
+        <p>
+          Une nouvelle aventure solidaire est en préparation. La date, le lieu
+          et l'association soutenue seront annoncés prochainement.
+        </p>
+        <ul class="event-features">
+          <li>Avant la fin 2026</li>
+          <li>Lieu et format à annoncer</li>
+          <li>Annonce en avant-première sur Facebook</li>
+        </ul>
+        <a href="{{ site.baseurl }}/prochain-evenement" class="event-cta">En savoir plus →</a>
+      </div>
+    </div>
+    <div class="event-card">
       <div class="event-card-header">
         <div class="icon">✈️</div>
         <h3>L'aventure solidaire - Rouen 2026</h3>
