@@ -105,9 +105,11 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 - **Accessibilité** : Balises sémantiques HTML5, textes alternatifs
 - **Liens internes** : Toujours utiliser `{{ site.baseurl }}/` pour les liens entre pages
 - **Menu mobile** : Hamburger menu avec panneau latéral droit, géré par JS dans navbar-script.html
-- **Bandeaux d'annonce** : plus aucun bandeau fixe sur le site. Si l'on en
-  réintroduit un, le positionner sous la navbar (`top: 70px`, hauteur de la
-  navbar), `z-index: 999`, et compenser dans le `padding-top` du hero
+- **Bandeaux d'annonce** : un seul bandeau fixe, `.event-banner` sur la page
+  d'accueil (annonce du prochain événement). Il est positionné sous la navbar
+  (`top: 70px`, ou `62px` sous 600px de large), `z-index: 999`, placé avant
+  `{% include navbar.html %}` pour rester sous l'overlay du menu mobile, et
+  compensé dans le `padding-top` du hero. Le retirer une fois l'événement passé
 
 ## Pages existantes
 
