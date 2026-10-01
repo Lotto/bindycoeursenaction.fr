@@ -61,11 +61,57 @@ layout: default
   /* Navigation */
   {% include navbar-styles.html %}
 
+  /* Bandeau d'annonce du prochain evenement (sous la navbar) */
+  .event-banner {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  .event-banner a {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 12px;
+  }
+
+  .event-banner .banner-heart {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .event-banner .banner-cta {
+    background: white;
+    color: #ee7518;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+  }
+
+  .event-banner a:hover .banner-cta {
+    transform: translateX(3px);
+  }
+
   /* Hero Section */
   .hero {
     background: linear-gradient(135deg, #203059 0%, #3a4b7a 50%, #ee7518 100%);
     color: white;
-    padding: 160px 20px 100px;
+    padding: 210px 20px 100px;
     text-align: center;
     min-height: 100vh;
     display: flex;
@@ -601,6 +647,27 @@ layout: default
     margin-bottom: 20px;
   }
 
+  .org-card .org-logo {
+    height: 160px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .org-card + .org-card {
+    margin-top: 40px;
+  }
+
+  .org-badge {
+    display: inline-block;
+    background: #ee7518;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+  }
+
   .org-card h3 {
     font-size: 2rem;
     color: #203059;
@@ -672,6 +739,24 @@ layout: default
   }
 
   @media (max-width: 768px) {
+    .event-banner {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+    }
+
+    .hero {
+      padding-top: 230px;
+    }
+  }
+
+  /* Navbar plus basse sous 600px (logo de 32px) */
+  @media (max-width: 600px) {
+    .event-banner {
+      top: 62px;
+    }
+  }
+
+  @media (max-width: 768px) {
     .hero h1 {
       font-size: 2.5rem;
     }
@@ -716,6 +801,14 @@ layout: default
     }
   }
 </style>
+
+<!-- Bandeau d'annonce du prochain evenement -->
+<div class="event-banner">
+  <a href="{{ site.baseurl }}/prochain-evenement">
+    <span><span class="banner-heart">❤️</span> <strong>Rouen Express 2026</strong> · samedi 5 décembre à Rouen, au profit de Vie et Espoir</span>
+    <span class="banner-cta">En savoir plus →</span>
+  </a>
+</div>
 
 {% include navbar.html %}
 
@@ -827,18 +920,19 @@ layout: default
   <div class="events-grid">
     <div class="event-card featured">
       <div class="event-card-header">
-        <div class="icon">🚧</div>
-        <h3>Prochain événement</h3>
+        <div class="icon">🚀</div>
+        <h3>Prochain événement : Rouen Express 2026</h3>
       </div>
       <div class="event-card-body">
         <p>
-          Une nouvelle aventure solidaire est en préparation à Rouen. La date
-          exacte et l'association soutenue seront annoncées prochainement.
+          Une nouvelle aventure solidaire à Rouen, au profit de Vie et Espoir,
+          l'association qui soutient les enfants atteints de cancer et leurs
+          familles.
         </p>
         <ul class="event-features">
-          <li>Rouen Express 2026</li>
-          <li>Avant la fin 2026 - Rouen</li>
-          <li>Annonce en avant-première sur Facebook</li>
+          <li>5 décembre 2026 - Rouen</li>
+          <li>Au profit de Vie et Espoir</li>
+          <li>Annonces en avant-première sur Facebook</li>
         </ul>
         <a href="{{ site.baseurl }}/prochain-evenement" class="event-cta">En savoir plus →</a>
       </div>
@@ -958,6 +1052,23 @@ layout: default
 <section id="supported" class="supported">
   <h2>Associations soutenues</h2>
   <p class="subtitle">Ensemble, nous soutenons des causes essentielles</p>
+  <div class="org-card">
+    <img src="{{ site.baseurl }}/assets/images/logo-vie-et-espoir.png" alt="Logo de l'association Vie et Espoir" class="org-logo">
+    <div><span class="org-badge">Rouen Express · 5 déc. 2026</span></div>
+    <h3>Vie et Espoir</h3>
+    <p>
+      Créée en 1986 au pavillon de pédiatrie de l'hôpital Charles Nicolle de
+      Rouen, Vie et Espoir soutient en Seine-Maritime et dans l'Eure les
+      enfants atteints de leucémie ou de tumeur cancéreuse, ainsi que leurs
+      familles. Entièrement gérée par des bénévoles, l'association finance
+      équipements médicaux, espaces de jeu et d'accueil, séjours de
+      ressourcement et accompagnement des parents, au CHU de Rouen comme au
+      Centre Hospitalier du Havre.
+    </p>
+    <a href="https://www.vieetespoir.org/" target="_blank" rel="noopener" class="org-link">
+      Découvrir Vie et Espoir →
+    </a>
+  </div>
   <div class="org-card">
     <div class="org-icon">🦋</div>
     <h3>Les Papillons</h3>
