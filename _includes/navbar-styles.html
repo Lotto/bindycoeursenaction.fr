@@ -228,3 +228,43 @@
     padding: 15px 20px;
   }
 }
+
+/* Bouton "Faire un don" (mis en avant dans le menu) */
+.nav-links {
+  align-items: center;
+}
+
+.nav-links a.btn-don {
+  display: inline-block;
+  background: linear-gradient(135deg, #ee7518, #c95d10);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(238, 117, 24, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a.btn-don:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(238, 117, 24, 0.5);
+}
+
+@media (max-width: 968px) {
+  .nav-links {
+    align-items: stretch;
+  }
+
+  .nav-links li.nav-don {
+    border-bottom: none;
+    margin-top: 25px;
+  }
+
+  .nav-links li a.btn-don {
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}
