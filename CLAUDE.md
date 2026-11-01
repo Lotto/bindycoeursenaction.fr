@@ -126,6 +126,7 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 | Prochain événement | `prochain-evenement.html` | `/prochain-evenement` |
 | Lien court réservation (redirige vers HelloAsso) | `reservation.html` | `/reservation` |
 | Lien court don (redirige vers HelloAsso) | `don.html` | `/don` |
+| Page introuvable (servie par GitHub Pages pour toute URL inconnue) | `404.html` | `/404.html` |
 
 `reservation.html` et `don.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
 
