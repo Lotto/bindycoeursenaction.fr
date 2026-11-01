@@ -110,6 +110,12 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
   (`top: 70px`, ou `62px` sous 600px de large), `z-index: 999`, placé avant
   `{% include navbar.html %}` pour rester sous l'overlay du menu mobile, et
   compensé dans le `padding-top` du hero. Le retirer une fois l'événement passé
+- **Lien court `/reservation`** : il pointe vers la billetterie HelloAsso de
+  l'événement en cours (actuellement le Rouen Express 2026, le samedi
+  5 décembre 2026). **Une fois l'événement passé, mettre à jour `redirect_to`
+  dans `reservation.html`** vers la billetterie du prochain événement, ou, si
+  elle n'est pas encore ouverte, vers `https://bindycoeursenaction.fr/prochain-evenement`.
+  Ne jamais supprimer la page : le lien est imprimé sur des affiches et QR codes
 
 ## Pages existantes
 
@@ -129,3 +135,4 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 - Le fichier `Gemfile.lock` est ignoré pour permettre à GitHub Pages d'utiliser ses propres versions
 - Les styles CSS sont inline dans chaque page, les styles partagés sont dans les includes
 - Pour modifier le menu ou le footer : éditer les fichiers dans `_includes/` (une seule fois pour toutes les pages)
+- Avant toute modification du site, vérifier si l'événement vers lequel pointe `/reservation` (voir `event_date` dans `reservation.html`) est passé : si oui, mettre à jour la redirection
