@@ -119,8 +119,9 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 | Événement Rouen 2026 | `aventure-solidaire-rouen-2026.html` | `/aventure-solidaire-rouen-2026` |
 | Prochain événement | `prochain-evenement.html` | `/prochain-evenement` |
 | Lien court réservation (redirige vers HelloAsso) | `reservation.html` | `/reservation` |
+| Lien court don (redirige vers HelloAsso) | `don.html` | `/don` |
 
-`reservation.html` est un raccourcisseur d'URL : modifier `redirect_to` dans son front matter pour pointer vers la billetterie HelloAsso du prochain événement.
+`reservation.html` et `don.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
 
 ## Important
 
