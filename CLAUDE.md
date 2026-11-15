@@ -45,6 +45,7 @@ bundle exec jekyll clean
 - `_includes/` - Composants HTML partiels réutilisables
 - `index.html` - Page d'accueil (landing page)
 - `aventure-solidaire-rouen-2026.html` - Page dédiée premier événement
+- `rouen-express-2026.html` - Page dédiée seconde édition (Rouen Express 2026)
 - `_site/` - Dossier de build (généré automatiquement, ignoré par git)
 
 ### Includes (composants partagés)
@@ -123,12 +124,15 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 |------|---------|-----|
 | Accueil | `index.html` | `/` |
 | Événement Rouen 2026 | `aventure-solidaire-rouen-2026.html` | `/aventure-solidaire-rouen-2026` |
-| Prochain événement | `prochain-evenement.html` | `/prochain-evenement` |
+| Rouen Express 2026 (2e édition) | `rouen-express-2026.html` | `/rouen-express-2026` |
+| Lien court prochain événement (redirige vers la page de l'événement en cours) | `prochain-evenement.html` | `/prochain-evenement` |
 | Lien court réservation (redirige vers HelloAsso) | `reservation.html` | `/reservation` |
 | Lien court don (redirige vers HelloAsso) | `don.html` | `/don` |
 | Page introuvable (servie par GitHub Pages pour toute URL inconnue) | `404.html` | `/404.html` |
 
-`reservation.html` et `don.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
+**Chaque événement a sa page dédiée** (`/rouen-express-2026`, …). `/prochain-evenement` n'est qu'une redirection vers la page de l'événement en cours : au prochain événement, créer sa page, mettre à jour `redirect_to` dans `prochain-evenement.html` et faire pointer l'item « Prochain événement » de `_includes/navbar.html` et `_includes/footer.html` vers la nouvelle page.
+
+`reservation.html`, `don.html` et `prochain-evenement.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
 
 ## Important
 
