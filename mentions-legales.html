@@ -86,15 +86,18 @@ description: Mentions légales du site de Bindy Coeurs en Action, crédits et re
 
   .credit-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
 
   .credit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background: white;
     border-radius: 16px;
-    padding: 25px;
+    padding: 22px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.06);
   }
 
@@ -116,6 +119,7 @@ description: Mentions légales du site de Bindy Coeurs en Action, crédits et re
     font-size: 0.98rem;
     color: #555;
     margin-bottom: 15px;
+    flex-grow: 1;
   }
 
   .credit-card .credit-link {
@@ -126,6 +130,7 @@ description: Mentions légales du site de Bindy Coeurs en Action, crédits et re
     border-radius: 50px;
     text-decoration: none;
     font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   .credit-card .credit-link:hover {
@@ -161,20 +166,26 @@ description: Mentions légales du site de Bindy Coeurs en Action, crédits et re
     <h2>❤️ Crédits et remerciements</h2>
     <p>
       Un immense merci à celles et ceux qui ont mis leur talent au service de
-      l'association et donné un visage à Bindy Coeurs en Action.
+      l'association et donné un visage à Bindy Coeurs en Action, du logo au site web.
     </p>
     <div class="credit-cards">
       <div class="credit-card">
         <span class="credit-role">Logo</span>
         <h3>5bway</h3>
         <p>Merci à 5bway pour la création du logo de Bindy Coeurs en Action.</p>
-        <a href="https://5bway.fr/" target="_blank" rel="noopener" class="credit-link">Découvrir 5bway →</a>
+        <a href="https://5bway.fr/" target="_blank" rel="noopener" class="credit-link">Voir le site →</a>
       </div>
       <div class="credit-card">
         <span class="credit-role">Design du roll-up</span>
         <h3>L'Atelier du Design</h3>
         <p>Merci à l'Atelier du Design pour le design de notre roll-up, présent sur tous nos événements.</p>
-        <a href="https://atelier-du-design.com/" target="_blank" rel="noopener" class="credit-link">Découvrir l'Atelier du Design →</a>
+        <a href="https://atelier-du-design.com/" target="_blank" rel="noopener" class="credit-link">Voir le site →</a>
+      </div>
+      <div class="credit-card">
+        <span class="credit-role">Création du site</span>
+        <h3>INIT1</h3>
+        <p>Site créé par INIT1, CTO externalisé et expert IA à Rouen.</p>
+        <a href="https://www.init-one.fr/" target="_blank" rel="noopener" class="credit-link">Voir le site →</a>
       </div>
     </div>
   </section>
