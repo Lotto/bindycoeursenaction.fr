@@ -13,14 +13,31 @@
 #   extrait       : une ou deux phrases qui résument ce que dit le média
 
 - type: article
-  media: actu Rouen
+  media: 76actu
   titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
   url: https://actu.fr/normandie/rouen_76540/pekin-express-dans-les-rues-de-rouen-participez-a-une-course-d-orientation-solidaire-inspiree-de-la-celebre-emission_65089859.html
-  # Jour exact non visible lors de la recherche : publié fin novembre 2026
   date: 2026-11-24
-  date_affichee: Novembre 2026
   evenement: Rouen Express 2026
-  extrait: "actu Rouen présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
+  extrait: "76actu présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
+
+- type: article
+  media: Sweet FM
+  titre: "« Rouen Express », la ville comme terrain de jeu"
+  url: https://www.sweetfm.fr/rouen-express-la-ville-comme-terrain-de-jeu
+  date: 2026-11-20
+  evenement: Rouen Express 2026
+  extrait: "Sweet FM présente la deuxième édition du Rouen Express, « déclinaison locale de Pékin Express », avec Cindy Lucas, présidente de l'association : une course d'orientation en binôme dans le centre-ville au profit de Vie et Espoir."
+
+- type: article
+  media: Paris Normandie
+  titre: "À Rouen, une course « façon Pékin Express » au profit des enfants atteints de cancer"
+  # Lien Google Actualités (redirige vers l'article) : paris-normandie.fr bloque
+  # les accès automatisés, l'URL directe n'a pas pu être récupérée. À remplacer
+  # par l'URL de l'article sur paris-normandie.fr si on l'a.
+  url: https://news.google.com/rss/articles/CBMi0gFBVV95cUxNelpvYkZyd2Y1SHVrYWxid0JfMXNXcVJ6Z056dy1ueTFraXdKNmt0YllvTDRxS0NYVUM1MV8zRllYYXJvTzhtdE1qY3NwZkFCTjIxZFVuTTluSlVDNG1MTjdZcU11T3k2MEZ4c25VWjBoSG9pOE5hNmsyTU93RTFIckV5THZoUVFVZVN1cUgwb05LendESkVsdFVYRWlKcEZVUDg3cFoxQkZfOTBkVlg5WVU4X0NYT3ZtWkZQd2JkSzNDX2JHUmdJSmNrWU52cjRFYUE?oc=5
+  date: 2026-11-18
+  evenement: Rouen Express 2026
+  extrait: "Paris Normandie présente notre course « façon Pékin Express » dans les rues de Rouen, organisée au profit des enfants atteints de cancer."
 
 - type: article
   media: Rouen Bouge
