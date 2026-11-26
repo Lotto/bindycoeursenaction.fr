@@ -21,6 +21,14 @@
   extrait: "76actu présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
 
 - type: article
+  media: Titres Presse
+  titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
+  url: https://www.titrespresse.com/30343002603/m6-pekin-express
+  date: 2026-11-24
+  evenement: Rouen Express 2026
+  extrait: "Le site d'actualités Titres Presse relaie l'article de 76actu sur notre course d'orientation solidaire inspirée de Pékin Express."
+
+- type: article
   media: Sweet FM
   titre: "« Rouen Express », la ville comme terrain de jeu"
   url: https://www.sweetfm.fr/rouen-express-la-ville-comme-terrain-de-jeu
