@@ -11,9 +11,12 @@
 #   date_affichee : optionnel, remplace la date affichée (ex. quand le jour exact est inconnu)
 #   evenement     : événement concerné (ex. « Rouen Express 2026 »)
 #   extrait       : une ou deux phrases qui résument ce que dit le média
+#   ordre         : optionnel, pour épingler une mention en tête de sa section
+#                   (1 = tout en haut, puis 2…) ; les autres suivent par date
 
 - type: article
   media: 76actu
+  ordre: 2
   titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
   url: https://actu.fr/normandie/rouen_76540/pekin-express-dans-les-rues-de-rouen-participez-a-une-course-d-orientation-solidaire-inspiree-de-la-celebre-emission_65089859.html
   date: 2026-11-24
@@ -21,15 +24,8 @@
   extrait: "76actu présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
 
 - type: article
-  media: Titres Presse
-  titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
-  url: https://www.titrespresse.com/30343002603/m6-pekin-express
-  date: 2026-11-24
-  evenement: Rouen Express 2026
-  extrait: "Le site d'actualités Titres Presse relaie l'article de 76actu sur notre course d'orientation solidaire inspirée de Pékin Express."
-
-- type: article
   media: Sweet FM
+  ordre: 1
   titre: "« Rouen Express », la ville comme terrain de jeu"
   url: https://www.sweetfm.fr/rouen-express-la-ville-comme-terrain-de-jeu
   date: 2026-11-20

@@ -9,6 +9,10 @@ description: Articles de presse, agendas et posts sur les réseaux sociaux qui p
   une fiche d'agenda ou un post, il suffit d'y ajouter un bloc.
 {%- endcomment -%}
 {%- assign mentions = site.data.presse | sort: "date" | reverse -%}
+{%- comment -%} Les mentions avec un champ « ordre » sont épinglées en tête, dans cet ordre {%- endcomment -%}
+{%- assign epinglees = mentions | where_exp: "m", "m.ordre" | sort: "ordre" -%}
+{%- assign autres = mentions | where_exp: "m", "m.ordre == nil" -%}
+{%- assign mentions = epinglees | concat: autres -%}
 {%- assign articles = mentions | where: "type", "article" -%}
 {%- assign agendas = mentions | where: "type", "agenda" -%}
 {%- assign posts = mentions | where: "type", "social" -%}

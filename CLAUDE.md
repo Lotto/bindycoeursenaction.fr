@@ -133,7 +133,7 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 
 **Chaque événement a sa page dédiée** (`/rouen-express-2026`, …). `/prochain-evenement` n'est qu'une redirection vers la page de l'événement en cours : au prochain événement, créer sa page, mettre à jour `redirect_to` dans `prochain-evenement.html` et faire pointer l'item « Prochain événement » de `_includes/navbar.html` et `_includes/footer.html` vers la nouvelle page.
 
-**Ils parlent de nous** : la page `/ils-parlent-de-nous` est générée à partir de `_data/presse.yml`. Pour ajouter un article, une fiche d'agenda ou un post (Facebook, Instagram…), ajouter un bloc dans ce fichier (`type` : `article`, `agenda` ou `social`) ; les mentions sont triées par date, la plus récente en premier. Aucun HTML à toucher.
+**Ils parlent de nous** : la page `/ils-parlent-de-nous` est générée à partir de `_data/presse.yml`. Pour ajouter un article, une fiche d'agenda ou un post (Facebook, Instagram…), ajouter un bloc dans ce fichier (`type` : `article`, `agenda` ou `social`) ; les mentions sont triées par date, la plus récente en premier, sauf celles qui ont un champ `ordre` (1, 2…), épinglées en tête de leur section. Aucun HTML à toucher.
 
 `reservation.html`, `don.html` et `prochain-evenement.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
 
