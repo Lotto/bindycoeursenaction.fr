@@ -39,10 +39,7 @@
 - type: article
   media: Paris Normandie
   titre: "À Rouen, une course « façon Pékin Express » au profit des enfants atteints de cancer"
-  # Lien Google Actualités (redirige vers l'article) : paris-normandie.fr bloque
-  # les accès automatisés, l'URL directe n'a pas pu être récupérée. À remplacer
-  # par l'URL de l'article sur paris-normandie.fr si on l'a.
-  url: https://news.google.com/rss/articles/CBMi0gFBVV95cUxNelpvYkZyd2Y1SHVrYWxid0JfMXNXcVJ6Z056dy1ueTFraXdKNmt0YllvTDRxS0NYVUM1MV8zRllYYXJvTzhtdE1qY3NwZkFCTjIxZFVuTTluSlVDNG1MTjdZcU11T3k2MEZ4c25VWjBoSG9pOE5hNmsyTU93RTFIckV5THZoUVFVZVN1cUgwb05LendESkVsdFVYRWlKcEZVUDg3cFoxQkZfOTBkVlg5WVU4X0NYT3ZtWkZQd2JkSzNDX2JHUmdJSmNrWU52cjRFYUE?oc=5
+  url: https://www.paris-normandie.fr/id760258/article/2026-11-18/rouen-une-course-facon-pekin-express-au-profit-des-enfants-atteints-de-cancer
   date: 2026-11-18
   evenement: Rouen Express 2026
   extrait: "Paris Normandie présente notre course « façon Pékin Express » dans les rues de Rouen, organisée au profit des enfants atteints de cancer."
