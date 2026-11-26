@@ -96,7 +96,18 @@ Cette première aventure n'aurait pas été possible sans vous :
 
 - **les participants**, pour leur énergie, leur bonne humeur et leur générosité ;
 - **les bénévoles** et le maître du jeu, qui ont animé le parcours toute la journée ;
-- **les commerçants rouennais** qui ont accueilli les épreuves dans leurs boutiques ;
+- **les commerçants et partenaires rouennais** qui ont accueilli les épreuves :
+  - **Niort Frères Distribution**, notre point de départ
+    ([site](https://www.niortfreres.fr/), [Instagram](https://www.instagram.com/niort.freres/)) ;
+  - **Au Café Couture**, café couture de la rue Alsace-Lorraine et son atelier de cœurs en feutrine
+    ([page de l'association](https://www.helloasso.com/associations/tout-pour-la-couture-au-cafe-couture)) ;
+  - **Faire Play**, restaurant et boutique de jeux de la Porte des Champs
+    ([site](https://faireplay.games/), [Instagram](https://www.instagram.com/faireplay76/)) ;
+  - **la boutique LoHa**, au 13 rue Damiette ;
+  - **Les Explos**, bar de la rue de la République et destination finale du parcours
+    ([site](https://les-explos.com/), [Instagram](https://www.instagram.com/les.explorateurs/)) ;
+  - **La Compagnie Padacor**, troupe de théâtre d'improvisation normande
+    ([site](https://www.lacompagniepadacor.fr/)) ;
 - **Rouen Bouge**, qui a [annoncé l'événement](https://rouen-bouge.fr/une-course-dorientation-facon-pekin-express-pour-la-bonne-cause-rendez-vous-le-25-avril-a-rouen).
 
 > Le fun au service du cœur : c'est notre devise, et ce 25 avril, vous l'avez
