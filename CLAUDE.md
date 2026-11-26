@@ -130,6 +130,8 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 | Événement Rouen 2026 | `aventure-solidaire-rouen-2026.html` | `/aventure-solidaire-rouen-2026` |
 | Rouen Express 2026 (2e édition) | `rouen-express-2026.html` | `/rouen-express-2026` |
 | Ils parlent de nous (presse, agendas, réseaux sociaux) | `ils-parlent-de-nous.html` | `/ils-parlent-de-nous` |
+| Blog (liste des articles) | `blog.html` | `/blog/` |
+| Articles du blog | `_posts/AAAA-MM-JJ-titre.md` | `/blog/titre` |
 | Lien court prochain événement (redirige vers la page de l'événement en cours) | `prochain-evenement.html` | `/prochain-evenement` |
 | Lien court réservation (redirige vers HelloAsso) | `reservation.html` | `/reservation` |
 | Lien court don (redirige vers HelloAsso) | `don.html` | `/don` |
@@ -138,6 +140,15 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 **Chaque événement a sa page dédiée** (`/rouen-express-2026`, …). `/prochain-evenement` n'est qu'une redirection vers la page de l'événement en cours : au prochain événement, créer sa page, mettre à jour `redirect_to` dans `prochain-evenement.html` et faire pointer l'item « Prochain événement » de `_includes/navbar.html` et `_includes/footer.html` vers la nouvelle page.
 
 **Ils parlent de nous** : la page `/ils-parlent-de-nous` est générée à partir de `_data/presse.yml`. Pour ajouter un article, une fiche d'agenda ou un post (Facebook, Instagram…), ajouter un bloc dans ce fichier (`type` : `article`, `agenda` ou `social`) ; les mentions sont triées par date, la plus récente en premier, sauf celles qui ont un champ `ordre` (1, 2…), épinglées en tête de leur section. Aucun HTML à toucher.
+
+**Blog** : un article = un fichier Markdown `_posts/AAAA-MM-JJ-titre-de-l-article.md`,
+publié sur `/blog/titre-de-l-article` avec le modèle `_layouts/article.html` (réglé
+dans `defaults` de `_config.yml`) et listé automatiquement sur `/blog/`. Front matter :
+`title`, `description` (résumé de la carte et du partage), `couverture` + `couverture_alt`
+(photo WebP de `assets/images/photos/`) et `image` (JPG 1200×630 pour l'aperçu sur les
+réseaux sociaux). Photos dans le texte : `<figure>` (classes `duo` pour deux photos côte à
+côte, `portrait` pour une photo verticale). L'encart de fin pointe vers `/prochain-evenement`
+et `/reservation`, il reste donc à jour sans modification. Flux RSS : `/feed.xml`.
 
 `reservation.html`, `don.html` et `prochain-evenement.html` sont des raccourcisseurs d'URL : modifier `redirect_to` dans leur front matter pour changer la destination (billetterie du prochain événement, formulaire de don).
 

@@ -11,6 +11,15 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Articles du blog (_posts/) : modèle et URL /blog/titre-de-l-article
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      permalink: /blog/:title
+
 # Exclude from processing
 exclude:
   - Gemfile

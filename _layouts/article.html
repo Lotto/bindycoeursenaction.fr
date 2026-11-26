@@ -1,0 +1,321 @@
+---
+layout: default
+---
+{%- comment -%}
+  Modèle des articles du blog (_posts/). Front matter attendu dans l'article :
+    title, description, image (partage réseaux sociaux, JPG 1200×630),
+    couverture (WebP grand format), couverture_alt
+{%- endcomment -%}
+{%- assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+{%- assign m = page.date | date: "%-m" | minus: 1 -%}
+{%- assign mots = content | strip_html | number_of_words -%}
+{%- assign minutes = mots | divided_by: 200 | plus: 1 -%}
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  {% include navbar-styles.html %}
+
+  /* En-tête de l'article */
+  .article-hero {
+    background: linear-gradient(135deg, #203059 0%, #3a4b7a 50%, #ee7518 100%);
+    color: white;
+    padding: 130px 20px 70px;
+    text-align: center;
+  }
+
+  .article-hero-content {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .article-back {
+    display: inline-block;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  .article-back:hover {
+    color: white;
+  }
+
+  .article-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .article-meta {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  /* Couverture */
+  .article-cover {
+    max-width: 1000px;
+    margin: -40px auto 0;
+    padding: 0 20px;
+  }
+
+  .article-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  /* Corps de l'article */
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    font-size: 1.12rem;
+    line-height: 1.85;
+    color: #3b3b3b;
+  }
+
+  .article-body > * + * {
+    margin-top: 1.2em;
+  }
+
+  .article-body h2 {
+    font-size: 1.8rem;
+    color: #203059;
+    line-height: 1.3;
+    margin-top: 2em;
+  }
+
+  .article-body h3 {
+    font-size: 1.3rem;
+    color: #203059;
+    margin-top: 1.6em;
+  }
+
+  .article-body a {
+    color: #ee7518;
+    font-weight: 600;
+  }
+
+  .article-body strong {
+    color: #203059;
+  }
+
+  .article-body ul,
+  .article-body ol {
+    padding-left: 1.4em;
+  }
+
+  .article-body li + li {
+    margin-top: 0.4em;
+  }
+
+  .article-body blockquote {
+    border-left: 4px solid #ee7518;
+    background: #fff8f0;
+    padding: 18px 24px;
+    border-radius: 0 12px 12px 0;
+    color: #203059;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .article-body figure {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .article-body figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+
+  .article-body figure.portrait img {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .article-body figure.duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .article-body figure.duo img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .article-body figure.duo figcaption {
+    grid-column: 1 / -1;
+  }
+
+  .article-body figcaption {
+    margin-top: 10px;
+    font-size: 0.92rem;
+    color: #777;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .article-chiffre {
+    text-align: center;
+    background: #203059;
+    color: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+  }
+
+  .article-chiffre strong {
+    display: block;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #ee7518;
+    margin-bottom: 10px;
+  }
+
+  /* Encart de fin */
+  .article-cta {
+    max-width: 720px;
+    margin: 20px auto 80px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+  }
+
+  .article-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 25px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background: white;
+    color: #203059;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
+  {% include footer-styles.html %}
+
+  @media (max-width: 768px) {
+    .article-hero h1 {
+      font-size: 2rem;
+    }
+
+    .article-body {
+      font-size: 1.05rem;
+      padding-top: 40px;
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+    }
+
+    .article-cover {
+      margin-top: -25px;
+    }
+
+    .article-cta {
+      margin-left: 16px;
+      margin-right: 16px;
+      padding: 30px 20px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+{% include navbar.html %}
+
+<article>
+  <header class="article-hero">
+    <div class="article-hero-content">
+      <a href="{{ site.baseurl }}/blog/" class="article-back">← Tous les articles</a>
+      <h1>{{ page.title }}</h1>
+      <p class="article-meta">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d" }} {{ mois[m] }} {{ page.date | date: "%Y" }}</time>
+        · {{ minutes }} min de lecture
+      </p>
+    </div>
+  </header>
+
+  {%- if page.couverture %}
+  <div class="article-cover">
+    <img src="{{ site.baseurl }}/assets/images/photos/{{ page.couverture }}" alt="{{ page.couverture_alt }}" width="1600" height="1200">
+  </div>
+  {%- endif %}
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>
+
+<aside class="article-cta">
+  {%- comment -%}
+    Encart volontairement générique : /prochain-evenement et /reservation sont
+    mis à jour à chaque nouvel événement (voir CLAUDE.md), il ne devient donc
+    jamais obsolète.
+  {%- endcomment %}
+  <h2>❤️ Envie de vivre la prochaine aventure ?</h2>
+  <p>
+    Rejoignez-nous pour notre prochain événement solidaire : on s'amuse,
+    et chaque inscription soutient une association.
+  </p>
+  <div class="cta-buttons">
+    <a href="{{ site.baseurl }}/prochain-evenement" class="cta-button">Découvrir le prochain événement</a>
+    <a href="{{ site.baseurl }}/reservation" class="cta-button secondary">Je m'inscris</a>
+  </div>
+</aside>
+
+{% include footer.html %}
+
+{% include navbar-script.html %}
