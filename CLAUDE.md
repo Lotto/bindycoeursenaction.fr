@@ -103,6 +103,10 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
   - `#ee7518` orange (accents, boutons, liens survolés) et `#c95d10` pour son dégradé
   - `#3a4b7a` bleu intermédiaire, `#fff8f0` fond crème des sections claires
 - **Emoji** : Utiliser ❤️ comme symbole de l'association
+- **Photos** : dans `assets/images/photos/`, en WebP optimisé (qualité ~76, métadonnées
+  EXIF/GPS supprimées), décliné en `-600.webp` (vignettes), `-1600.webp` (grand format)
+  et `-carte.webp` (recadrage 720×450 pour les cartes de « Ils parlent de nous »).
+  Toujours un `alt` descriptif et `loading="lazy"` hors du premier écran
 - **Accessibilité** : Balises sémantiques HTML5, textes alternatifs
 - **Liens internes** : Toujours utiliser `{{ site.baseurl }}/` pour les liens entre pages
 - **Menu mobile** : Hamburger menu avec panneau latéral droit, géré par JS dans navbar-script.html

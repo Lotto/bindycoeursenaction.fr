@@ -11,6 +11,8 @@
 #   date_affichee : optionnel, remplace la date affichée (ex. quand le jour exact est inconnu)
 #   evenement     : événement concerné (ex. « Rouen Express 2026 »)
 #   extrait       : une ou deux phrases qui résument ce que dit le média
+#   image         : optionnel, photo de la carte (720×450, WebP) dans assets/images/photos/
+#   image_alt     : description de la photo (accessibilité)
 #   ordre         : optionnel, pour épingler une mention en tête de sa section
 #                   (1 = tout en haut, puis 2…) ; les autres suivent par date
 
@@ -19,6 +21,8 @@
   ordre: 2
   titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
   url: https://actu.fr/normandie/rouen_76540/pekin-express-dans-les-rues-de-rouen-participez-a-une-course-d-orientation-solidaire-inspiree-de-la-celebre-emission_65089859.html
+  image: boutique-createurs-carte.webp
+  image_alt: "Un participant cherche un indice parmi les étagères d'une boutique de créateurs rouennaise"
   date: 2026-11-24
   evenement: Rouen Express 2026
   extrait: "76actu présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
@@ -28,6 +32,8 @@
   ordre: 1
   titre: "« Rouen Express », la ville comme terrain de jeu"
   url: https://www.sweetfm.fr/rouen-express-la-ville-comme-terrain-de-jeu
+  image: aitre-saint-maclou-carte.webp
+  image_alt: "Le maître du jeu maquillé et coiffé d'un haut-de-forme accueille un binôme sous les galeries de l'Aître Saint-Maclou"
   date: 2026-11-20
   evenement: Rouen Express 2026
   extrait: "Sweet FM présente la deuxième édition du Rouen Express, « déclinaison locale de Pékin Express », avec Cindy Lucas, présidente de l'association : une course d'orientation en binôme dans le centre-ville au profit de Vie et Espoir."
@@ -36,6 +42,8 @@
   media: Paris Normandie
   titre: "À Rouen, une course « façon Pékin Express » au profit des enfants atteints de cancer"
   url: https://www.paris-normandie.fr/id760258/article/2026-11-18/rouen-une-course-facon-pekin-express-au-profit-des-enfants-atteints-de-cancer
+  image: podium-trophee-carte.webp
+  image_alt: "Le binôme vainqueur de la première édition pose avec le trophée Bindy Coeurs en Action"
   date: 2026-11-18
   evenement: Rouen Express 2026
   extrait: "Paris Normandie présente notre course « façon Pékin Express » dans les rues de Rouen, organisée au profit des enfants atteints de cancer."
@@ -44,6 +52,8 @@
   media: Rouen Bouge
   titre: "Rouen Express : un Pékin Express solidaire dans les rues de Rouen le 5 décembre"
   url: https://rouen-bouge.fr/rouen-express-un-pekin-express-solidaire-dans-les-rues-de-rouen-le-5-decembre
+  image: binome-parc-carte.webp
+  image_alt: "Deux participants consultent leur téléphone pour résoudre une énigme dans un parc de Rouen"
   date: 2026-11-16
   evenement: Rouen Express 2026
   extrait: "Rouen Bouge détaille le jeu de piste en duo du 5 décembre, ses épreuves et ses énigmes, et rappelle que les bénéfices sont reversés à Vie et Espoir."
@@ -52,6 +62,8 @@
   media: JDS Rouen
   titre: "L'aventure solidaire - Rouen 2026 #2"
   url: https://www.jds.fr/rouen/manifestations/l-aventure-solidaire-rouen-2026-2-1850984_A
+  image: stand-cathedrale-carte.webp
+  image_alt: "Le kakémono de Bindy Coeurs en Action devant la cathédrale de Rouen"
   date: 2026-11-18
   evenement: Rouen Express 2026
   extrait: "Le Journal des Sorties annonce la seconde édition de notre course d'orientation en binôme, le samedi 5 décembre 2026 à 13h30."
@@ -60,7 +72,21 @@
   media: LocalBiz Mont-Saint-Aignan
   titre: "L'aventure solidaire - Rouen 2026 #2"
   url: https://mont-saint-aignan.localbiz.fr/actus/datatourisme/FMANOR076V529FU4/l-aventure-solidaire-rouen-2026-%232
+  image: epreuve-jeux-carte.webp
+  image_alt: "Des participants relèvent une épreuve de jeu de société dans une ludothèque"
   date: 2026-11-15
   date_affichee: Novembre 2026
   evenement: Rouen Express 2026
   extrait: "L'agenda des sorties de la métropole relaie le Rouen Express et son association bénéficiaire, Vie et Espoir."
+
+- type: article
+  media: Rouen Bouge
+  titre: "Une course d'orientation façon Pékin Express pour la bonne cause : rendez-vous le 25 avril à Rouen"
+  url: https://rouen-bouge.fr/une-course-dorientation-facon-pekin-express-pour-la-bonne-cause-rendez-vous-le-25-avril-a-rouen
+  image: boutique-jeux-equipe-carte.webp
+  image_alt: "Une équipe de participants pose avec le gérant d'une boutique de jeux pendant la première édition"
+  # Jour de publication inconnu : avant l'événement du 25 avril 2026
+  date: 2026-04-01
+  date_affichee: Printemps 2026
+  evenement: L'aventure solidaire - Rouen avril 2026
+  extrait: "Rouen Bouge annonce notre toute première course d'orientation solidaire façon Pékin Express, au profit de l'association Les Papillons."
