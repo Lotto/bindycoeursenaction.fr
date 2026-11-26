@@ -1,0 +1,248 @@
+---
+layout: default
+title: Mentions légales
+permalink: /mentions-legales
+description: Mentions légales du site de Bindy Coeurs en Action, crédits et remerciements.
+---
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  {% include navbar-styles.html %}
+
+  .legal-hero {
+    background: linear-gradient(135deg, #203059 0%, #3a4b7a 50%, #ee7518 100%);
+    color: white;
+    padding: 140px 20px 70px;
+    text-align: center;
+  }
+
+  .legal-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .legal-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .legal-body section + section {
+    margin-top: 45px;
+  }
+
+  .legal-body h2 {
+    font-size: 1.6rem;
+    color: #203059;
+    margin-bottom: 15px;
+  }
+
+  .legal-body p + p,
+  .legal-body p + ul,
+  .legal-body ul + p {
+    margin-top: 12px;
+  }
+
+  .legal-body ul {
+    list-style: none;
+  }
+
+  .legal-body li {
+    padding: 3px 0;
+  }
+
+  .legal-body a {
+    color: #ee7518;
+    font-weight: 600;
+  }
+
+  .legal-body strong {
+    color: #203059;
+  }
+
+  /* Encart crédits et remerciements */
+  .credits {
+    background: #fff8f0;
+    border-radius: 20px;
+    padding: 35px 30px;
+    border: 2px solid #f6e3d2;
+  }
+
+  .credit-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .credit-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  }
+
+  .credit-card .credit-role {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ee7518;
+  }
+
+  .credit-card h3 {
+    font-size: 1.3rem;
+    color: #203059;
+    margin: 6px 0 10px;
+  }
+
+  .credit-card p {
+    font-size: 0.98rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  .credit-card .credit-link {
+    display: inline-block;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .credit-card .credit-link:hover {
+    box-shadow: 0 8px 20px rgba(238, 117, 24, 0.3);
+  }
+
+  {% include footer-styles.html %}
+
+  @media (max-width: 768px) {
+    .legal-hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .credit-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .credits {
+      padding: 25px 18px;
+    }
+  }
+</style>
+
+{% include navbar.html %}
+
+<section class="legal-hero">
+  <h1>Mentions légales</h1>
+</section>
+
+<div class="legal-body">
+
+  <section class="credits" id="credits">
+    <h2>❤️ Crédits et remerciements</h2>
+    <p>
+      Un immense merci à celles et ceux qui ont mis leur talent au service de
+      l'association et donné un visage à Bindy Coeurs en Action.
+    </p>
+    <div class="credit-cards">
+      <div class="credit-card">
+        <span class="credit-role">Logo</span>
+        <h3>5bway</h3>
+        <p>Merci à 5bway pour la création du logo de Bindy Coeurs en Action.</p>
+        <a href="https://5bway.fr/" target="_blank" rel="noopener" class="credit-link">Découvrir 5bway →</a>
+      </div>
+      <div class="credit-card">
+        <span class="credit-role">Design du roll-up</span>
+        <h3>L'Atelier du Design</h3>
+        <p>Merci à l'Atelier du Design pour le design de notre roll-up, présent sur tous nos événements.</p>
+        <a href="https://atelier-du-design.com/" target="_blank" rel="noopener" class="credit-link">Découvrir l'Atelier du Design →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Éditeur du site</h2>
+    <p>
+      Le site <strong>bindycoeursenaction.fr</strong> est édité par l'association
+      <strong>Bindy Coeurs en Action</strong>, association loi 1901 à but non lucratif,
+      dont le siège est situé à Rouen (76000).
+    </p>
+    <ul>
+      <li>Contact : <a href="mailto:contact@bindycoeursenaction.fr">contact@bindycoeursenaction.fr</a></li>
+      <li>Directrice de la publication : la présidente de l'association</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hébergement</h2>
+    <p>
+      Le site est hébergé par <strong>GitHub, Inc.</strong> (service GitHub Pages),
+      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis —
+      <a href="https://github.com" target="_blank" rel="noopener">github.com</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Propriété intellectuelle</h2>
+    <p>
+      L'ensemble des contenus de ce site (textes, logo, visuels et photographies)
+      est la propriété de Bindy Coeurs en Action ou de leurs auteurs respectifs.
+      Toute reproduction, totale ou partielle, sans autorisation préalable est
+      interdite. Pour toute demande, écrivez-nous à
+      <a href="mailto:contact@bindycoeursenaction.fr">contact@bindycoeursenaction.fr</a>.
+    </p>
+    <p>
+      Si vous apparaissez sur une photo de nos événements et souhaitez qu'elle soit
+      retirée, contactez-nous : nous la supprimerons dans les meilleurs délais.
+    </p>
+  </section>
+
+  <section>
+    <h2>Données personnelles et cookies</h2>
+    <p>
+      Ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience.
+      Il ne collecte aucune donnée personnelle par lui-même.
+    </p>
+    <p>
+      Les inscriptions aux événements et les dons sont gérés par la plateforme
+      <a href="https://www.helloasso.com" target="_blank" rel="noopener">HelloAsso</a>,
+      selon sa propre politique de confidentialité. Conformément au RGPD, vous
+      pouvez exercer vos droits d'accès, de rectification et de suppression des
+      données vous concernant détenues par l'association en écrivant à
+      <a href="mailto:contact@bindycoeursenaction.fr">contact@bindycoeursenaction.fr</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>Liens externes</h2>
+    <p>
+      Le site contient des liens vers d'autres sites (HelloAsso, associations
+      partenaires, médias…). Bindy Coeurs en Action n'est pas responsable de leur
+      contenu.
+    </p>
+  </section>
+
+</div>
+
+{% include footer.html %}
+
+{% include navbar-script.html %}

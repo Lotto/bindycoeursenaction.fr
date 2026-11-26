@@ -132,6 +132,7 @@ Le site est accessible sur `https://bindycoeursenaction.fr`.
 | Ils parlent de nous (presse, agendas, réseaux sociaux) | `ils-parlent-de-nous.html` | `/ils-parlent-de-nous` |
 | Blog (liste des articles) | `blog.html` | `/blog/` |
 | Articles du blog | `_posts/AAAA-MM-JJ-titre.md` | `/blog/titre` |
+| Mentions légales, crédits (5bway, Atelier du Design) | `mentions-legales.html` | `/mentions-legales` |
 | Lien court prochain événement (redirige vers la page de l'événement en cours) | `prochain-evenement.html` | `/prochain-evenement` |
 | Lien court réservation (redirige vers HelloAsso) | `reservation.html` | `/reservation` |
 | Lien court don (redirige vers HelloAsso) | `don.html` | `/don` |
