@@ -1,0 +1,48 @@
+# Retombées presse et réseaux sociaux, affichées sur la page /ils-parlent-de-nous.
+#
+# Pour ajouter une mention, copier un bloc ci-dessous et le remplir :
+#   type          : article (presse, blog, site d'info), agenda (fiche d'agenda
+#                   en ligne) ou social (post Facebook, Instagram, LinkedIn…)
+#   media         : nom du média ou du compte (ex. « actu Rouen », « Vie et Espoir »)
+#   reseau        : pour un post (type social) : facebook, instagram, linkedin ou tiktok
+#   titre         : titre de l'article ou résumé court du post
+#   url           : lien vers l'article ou le post
+#   date          : date de publication (AAAA-MM-JJ), sert au tri (plus récent en premier)
+#   date_affichee : optionnel, remplace la date affichée (ex. quand le jour exact est inconnu)
+#   evenement     : événement concerné (ex. « Rouen Express 2026 »)
+#   extrait       : une ou deux phrases qui résument ce que dit le média
+
+- type: article
+  media: actu Rouen
+  titre: "Pékin Express dans les rues de Rouen : participez à une course d'orientation solidaire inspirée de la célèbre émission"
+  url: https://actu.fr/normandie/rouen_76540/pekin-express-dans-les-rues-de-rouen-participez-a-une-course-d-orientation-solidaire-inspiree-de-la-celebre-emission_65089859.html
+  # Jour exact non visible lors de la recherche : publié fin novembre 2026
+  date: 2026-11-24
+  date_affichee: Novembre 2026
+  evenement: Rouen Express 2026
+  extrait: "actu Rouen présente notre course d'orientation solidaire dans les rues de Rouen, inspirée de l'émission Pékin Express, au profit des enfants soignés pour un cancer."
+
+- type: article
+  media: Rouen Bouge
+  titre: "Rouen Express : un Pékin Express solidaire dans les rues de Rouen le 5 décembre"
+  url: https://rouen-bouge.fr/rouen-express-un-pekin-express-solidaire-dans-les-rues-de-rouen-le-5-decembre
+  date: 2026-11-16
+  evenement: Rouen Express 2026
+  extrait: "Rouen Bouge détaille le jeu de piste en duo du 5 décembre, ses épreuves et ses énigmes, et rappelle que les bénéfices sont reversés à Vie et Espoir."
+
+- type: agenda
+  media: JDS Rouen
+  titre: "L'aventure solidaire - Rouen 2026 #2"
+  url: https://www.jds.fr/rouen/manifestations/l-aventure-solidaire-rouen-2026-2-1850984_A
+  date: 2026-11-18
+  evenement: Rouen Express 2026
+  extrait: "Le Journal des Sorties annonce la seconde édition de notre course d'orientation en binôme, le samedi 5 décembre 2026 à 13h30."
+
+- type: agenda
+  media: LocalBiz Mont-Saint-Aignan
+  titre: "L'aventure solidaire - Rouen 2026 #2"
+  url: https://mont-saint-aignan.localbiz.fr/actus/datatourisme/FMANOR076V529FU4/l-aventure-solidaire-rouen-2026-%232
+  date: 2026-11-15
+  date_affichee: Novembre 2026
+  evenement: Rouen Express 2026
+  extrait: "L'agenda des sorties de la métropole relaie le Rouen Express et son association bénéficiaire, Vie et Espoir."

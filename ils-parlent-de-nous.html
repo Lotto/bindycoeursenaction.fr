@@ -1,0 +1,487 @@
+---
+layout: default
+title: Ils parlent de nous
+permalink: /ils-parlent-de-nous
+description: Articles de presse, agendas et posts sur les réseaux sociaux qui parlent de Bindy Coeurs en Action et de ses aventures solidaires, dont le Rouen Express du 5 décembre 2026.
+---
+{%- comment -%}
+  Le contenu de cette page vient de _data/presse.yml : pour ajouter un article,
+  une fiche d'agenda ou un post, il suffit d'y ajouter un bloc.
+{%- endcomment -%}
+{%- assign mentions = site.data.presse | sort: "date" | reverse -%}
+{%- assign articles = mentions | where: "type", "article" -%}
+{%- assign agendas = mentions | where: "type", "agenda" -%}
+{%- assign posts = mentions | where: "type", "social" -%}
+{%- assign mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+
+<style>
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  {% include navbar-styles.html %}
+
+  /* Hero */
+  .press-hero {
+    background: linear-gradient(135deg, #203059 0%, #3a4b7a 50%, #ee7518 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+  }
+
+  .press-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .press-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .press-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .press-hero p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+
+  .press-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+  }
+
+  .press-stats a {
+    background: white;
+    color: #203059;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .press-stats a:hover {
+    transform: translateY(-3px);
+  }
+
+  .press-stats strong {
+    color: #ee7518;
+  }
+
+  /* Sections */
+  .press-section {
+    padding: 80px 20px;
+    background: #fff;
+    scroll-margin-top: 70px;
+  }
+
+  .press-section.alt {
+    background: #fff8f0;
+  }
+
+  .press-section h2 {
+    font-size: 2.5rem;
+    color: #203059;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .press-section h2 span {
+    color: #ee7518;
+  }
+
+  .press-section .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 45px;
+  }
+
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Carte d'une mention */
+  .press-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-top: 4px solid #ee7518;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .press-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+  }
+
+  .press-card.agenda {
+    border-top-color: #3a4b7a;
+  }
+
+  .press-card.social {
+    border-top-color: #203059;
+  }
+
+  .press-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .press-media {
+    font-weight: 700;
+    color: #ee7518;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+
+  .press-date {
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .press-card h3 {
+    color: #203059;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .press-card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .press-card h3 a:hover {
+    color: #ee7518;
+  }
+
+  .press-card p {
+    color: #555;
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+
+  .press-event {
+    display: inline-block;
+    align-self: flex-start;
+    background: #fff8f0;
+    color: #203059;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+  }
+
+  .press-link {
+    color: #ee7518;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .press-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Encart quand aucun post n'est encore référencé */
+  .press-empty {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+
+  .press-empty p {
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  /* Boutons */
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(238, 117, 24, 0.3);
+  }
+
+  .cta-button .fb-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* CTA final */
+  .cta-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ee7518 0%, #c95d10 100%);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 auto 35px;
+    max-width: 650px;
+  }
+
+  .cta-section .cta-button {
+    background: white;
+    color: #203059;
+  }
+
+  .cta-section .cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .cta-section .cta-button.secondary:hover {
+    background: white;
+    color: #203059;
+  }
+
+  {% include footer-styles.html %}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .press-hero h1 {
+      font-size: 2.3rem;
+    }
+
+    .press-hero p {
+      font-size: 1.1rem;
+    }
+
+    .press-section h2,
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+
+    .press-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-button {
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+</style>
+
+{% include navbar.html %}
+
+<!-- Hero -->
+<section class="press-hero">
+  <div class="press-hero-content">
+    <div class="press-badge">📰 Presse &amp; réseaux sociaux</div>
+    <h1>Ils parlent de nous</h1>
+    <p>
+      Médias locaux, agendas et réseaux sociaux relaient nos aventures solidaires,
+      et en ce moment le Rouen Express du samedi 5 décembre 2026. Merci à eux ❤️
+    </p>
+    <div class="press-stats">
+      {%- if articles.size > 0 %}
+      <a href="#presse"><strong>{{ articles.size }}</strong> article{% if articles.size > 1 %}s{% endif %}</a>
+      {%- endif %}
+      {%- if agendas.size > 0 %}
+      <a href="#agendas"><strong>{{ agendas.size }}</strong> agenda{% if agendas.size > 1 %}s{% endif %}</a>
+      {%- endif %}
+      {%- if posts.size > 0 %}
+      <a href="#reseaux"><strong>{{ posts.size }}</strong> post{% if posts.size > 1 %}s{% endif %}</a>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+{%- if articles.size > 0 %}
+<!-- Articles de presse -->
+<section id="presse" class="press-section">
+  <h2>Dans la <span>presse</span></h2>
+  <p class="intro">Les articles consacrés à l'association et à ses événements.</p>
+  <div class="press-grid">
+    {%- for item in articles %}
+    {%- assign m = item.date | date: "%-m" | minus: 1 %}
+    <article class="press-card">
+      <div class="press-meta">
+        <span class="press-media">{{ item.media }}</span>
+        <time class="press-date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{% if item.date_affichee %}{{ item.date_affichee }}{% else %}{{ item.date | date: "%-d" }} {{ mois[m] }} {{ item.date | date: "%Y" }}{% endif %}</time>
+      </div>
+      <h3><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.titre }}</a></h3>
+      {%- if item.evenement %}
+      <span class="press-event">❤️ {{ item.evenement }}</span>
+      {%- endif %}
+      <p>{{ item.extrait }}</p>
+      <a href="{{ item.url }}" target="_blank" rel="noopener" class="press-link">Lire l'article →</a>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- if agendas.size > 0 %}
+<!-- Agendas en ligne -->
+<section id="agendas" class="press-section alt">
+  <h2>Dans les <span>agendas</span></h2>
+  <p class="intro">Les agendas de sorties qui annoncent nos événements.</p>
+  <div class="press-grid">
+    {%- for item in agendas %}
+    {%- assign m = item.date | date: "%-m" | minus: 1 %}
+    <article class="press-card agenda">
+      <div class="press-meta">
+        <span class="press-media">{{ item.media }}</span>
+        <time class="press-date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{% if item.date_affichee %}{{ item.date_affichee }}{% else %}{{ item.date | date: "%-d" }} {{ mois[m] }} {{ item.date | date: "%Y" }}{% endif %}</time>
+      </div>
+      <h3><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.titre }}</a></h3>
+      {%- if item.evenement %}
+      <span class="press-event">❤️ {{ item.evenement }}</span>
+      {%- endif %}
+      <p>{{ item.extrait }}</p>
+      <a href="{{ item.url }}" target="_blank" rel="noopener" class="press-link">Voir la fiche →</a>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+<!-- Réseaux sociaux -->
+<section id="reseaux" class="press-section">
+  <h2>Sur les <span>réseaux sociaux</span></h2>
+  <p class="intro">Les posts qui parlent de nous et partagent nos aventures.</p>
+  {%- if posts.size > 0 %}
+  <div class="press-grid">
+    {%- for item in posts %}
+    {%- assign m = item.date | date: "%-m" | minus: 1 %}
+    <article class="press-card social">
+      <div class="press-meta">
+        <span class="press-media">{{ item.media }}{% if item.reseau %} · {{ item.reseau | capitalize }}{% endif %}</span>
+        <time class="press-date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{% if item.date_affichee %}{{ item.date_affichee }}{% else %}{{ item.date | date: "%-d" }} {{ mois[m] }} {{ item.date | date: "%Y" }}{% endif %}</time>
+      </div>
+      <h3><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.titre }}</a></h3>
+      {%- if item.evenement %}
+      <span class="press-event">❤️ {{ item.evenement }}</span>
+      {%- endif %}
+      <p>{{ item.extrait }}</p>
+      <a href="{{ item.url }}" target="_blank" rel="noopener" class="press-link">Voir le post →</a>
+    </article>
+    {%- endfor %}
+  </div>
+  {%- else %}
+  <div class="press-empty">
+    <p>
+      Retrouvez les coulisses de la préparation du Rouen Express, les annonces
+      et les photos de nos aventures sur notre page Facebook.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.facebook.com/share/1DYDD1KE4z/" target="_blank" rel="noopener" class="cta-button">
+        <svg class="fb-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
+        </svg>
+        Suivre sur Facebook
+      </a>
+    </div>
+  </div>
+  {%- endif %}
+</section>
+
+<!-- CTA final -->
+<section class="cta-section">
+  <h2>Vous souhaitez parler de nous ?</h2>
+  <p>
+    Journaliste, blogueur ou partenaire : écrivez-nous pour une interview, des
+    photos ou des informations sur nos événements. Vous avez repéré un article
+    ou un post qui manque ici ? Envoyez-nous le lien !
+  </p>
+  <div class="cta-buttons">
+    <a href="mailto:contact@bindycoeursenaction.fr" class="cta-button">✉️ Nous contacter</a>
+    <a href="{{ site.baseurl }}/rouen-express-2026" class="cta-button secondary">Découvrir le Rouen Express</a>
+  </div>
+</section>
+
+{% include footer.html %}
+
+{% include navbar-script.html %}

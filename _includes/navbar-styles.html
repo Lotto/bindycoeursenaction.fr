@@ -160,6 +160,23 @@
   display: block;
 }
 
+/* Juste au-dessus du passage en menu hamburger, on resserre les liens
+   pour que la navbar tienne sur une seule ligne */
+@media (min-width: 969px) and (max-width: 1100px) {
+  .navbar {
+    padding: 15px 24px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links > li > a {
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+}
+
 /* Navbar responsive */
 @media (max-width: 968px) {
   .hamburger {
